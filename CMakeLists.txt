@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-PROJECT(ITKEXPAT)
-#INCLUDE_REGULAR_EXPRESSION("^(expat|xml|ascii|utf|name|iascii|latin|itk).*$")
+PROJECT(expat)
+INCLUDE_REGULAR_EXPRESSION("^(expat|xml|ascii|utf|name|iascii|latin|itk).*$")
 
 SET(expat_SRCS
   xmlparse.c
@@ -8,8 +8,8 @@ SET(expat_SRCS
   xmlrole.c
 )
 
-INCLUDE_DIRECTORIES(${ITKEXPAT_SOURCE_DIR})
-INCLUDE_DIRECTORIES(${ITKEXPAT_BINARY_DIR})
+INCLUDE_DIRECTORIES(${expat_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${expat_BINARY_DIR})
 
 IF(WIN32)
   IF(NOT BUILD_SHARED_LIBS)
@@ -17,13 +17,15 @@ IF(WIN32)
   ENDIF(NOT BUILD_SHARED_LIBS)
 ENDIF(WIN32)
 
-CONFIGURE_FILE(${ITKEXPAT_SOURCE_DIR}/expatConfig.h.in
-               ${ITKEXPAT_BINARY_DIR}/expatConfig.h)
-CONFIGURE_FILE(${ITKEXPAT_SOURCE_DIR}/expatDllConfig.h.in
-               ${ITKEXPAT_BINARY_DIR}/expatDllConfig.h)
-CONFIGURE_FILE(${ITKEXPAT_SOURCE_DIR}/.NoDartCoverage
-               ${ITKEXPAT_BINARY_DIR}/.NoDartCoverage)
+CONFIGURE_FILE(${expat_SOURCE_DIR}/expatConfig.h.in
+               ${expat_BINARY_DIR}/expatConfig.h)
+CONFIGURE_FILE(${expat_SOURCE_DIR}/expatDllConfig.h.in
+               ${expat_BINARY_DIR}/expatDllConfig.h)
+CONFIGURE_FILE(${expat_SOURCE_DIR}/.NoDartCoverage
+               ${expat_BINARY_DIR}/.NoDartCoverage)
 
-ADD_LIBRARY(ITKEXPAT ${expat_SRCS})
+ADD_LIBRARY(expat ${expat_SRCS})
+
+INCLUDE(GenerateExpatConfig.cmake)
 
 

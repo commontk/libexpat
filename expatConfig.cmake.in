@@ -1,0 +1,8 @@
+SET(expat_LIBRARY_DIRS "@expat_LIBRARY_DIRS_CONFIG@")
+
+SET(expat_LIBRARIES cmcurl)
+
+SET(expat_INCLUDE_DIRS "@expat_INCLUDE_DIRS_CONFIG@")
+
+# The location of the Useexpat.cmake file.
+set(expat_USE_FILE "@expat_USE_FILE_CONFIG@")
