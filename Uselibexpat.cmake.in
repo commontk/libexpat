@@ -1,0 +1,13 @@
+#
+# This module is provided as libexpat_USE_FILE by libexpatConfig.cmake.  It can
+# be INCLUDED in a project to load the needed compiler and linker
+# settings to use libexpat.
+#
+
+IF(NOT libexpat_USE_FILE_INCLUDED)
+  SET(libexpat_USE_FILE_INCLUDED 1)
+  
+  # Add include directories needed to use libexpat.
+  INCLUDE_DIRECTORIES(${libexpat_INCLUDE_DIRS})
+  
+ENDIF()

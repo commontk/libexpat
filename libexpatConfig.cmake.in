@@ -1,0 +1,8 @@
+SET(libexpat_LIBRARY_DIRS "@libexpat_LIBRARY_DIRS_CONFIG@")
+
+SET(libexpat_LIBRARIES libexpat)
+
+SET(libexpat_INCLUDE_DIRS "@libexpat_INCLUDE_DIRS_CONFIG@")
+
+# The location of the Uselibexpat.cmake file.
+set(libexpat_USE_FILE "@libexpat_USE_FILE_CONFIG@")
