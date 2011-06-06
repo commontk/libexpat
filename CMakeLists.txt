@@ -2,6 +2,9 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 PROJECT(expat)
 INCLUDE_REGULAR_EXPRESSION("^(expat|xml|ascii|utf|name|iascii|latin|itk).*$")
 
+INCLUDE(${CMAKE_ROOT}/Modules/CMakeBackwardCompatibilityC.cmake)
+INCLUDE(${CMAKE_ROOT}/Modules/CMakeBackwardCompatibilityCXX.cmake)
+
 SET(expat_SRCS
   xmlparse.c
   xmltok.c
